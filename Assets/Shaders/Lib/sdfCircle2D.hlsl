@@ -1,20 +1,13 @@
 #ifndef LWG_SDFCIRCLE2D_INCLUDED
 #define LWG_SDFCIRCLE2D_INCLUDED
 
-// Circle SDF
-float sdfCircle2D(float2 uv) {
-    return length(uv - 0.5) * 2;
-}
-half sdfCircle2D_half(half2 uv) {
-    return length(uv - 0.5) * 2;
-}
+#include "./common.hlsl"
 
-// Circle SDF Graph
-void sdfCircle2D_graph_float(float2 UV, out float SDF) {
-    SDF = sdfCircle2D(UV);
+// Circle SDF
+real sdfCircle2D(real2 uv) {
+    return length(uv - 0.5) * 2;
 }
-void sdfCircle2D_graph_half(half2 UV, out half SDF) {
-    SDF = sdfCircle2D_half(UV);
-}
+GRAPH_DEFINE_1(sdfCircle2D, real2, real);
+
 
 #endif

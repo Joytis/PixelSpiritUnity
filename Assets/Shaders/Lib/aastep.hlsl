@@ -2,12 +2,8 @@
 #define LWG_AASTEP_INCLUDED
 
 // Anti-aliasing step
-float aastep(float threshold, float value) {
-    float afwidth = 0.2 * length(float2(ddx(value), ddy(value)));
-    return smoothstep(threshold - afwidth, threshold + afwidth, value);
-}
-half aastep(half threshold, half value) {
-    half afwidth = 0.2 * length(half2(ddx(value), ddy(value)));
+real aastep(real threshold, real value) {
+    real afwidth = 0.2 * length(real2(ddx(value), ddy(value)));
     return smoothstep(threshold - afwidth, threshold + afwidth, value);
 }
 
