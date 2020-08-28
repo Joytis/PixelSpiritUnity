@@ -11,6 +11,7 @@
 real3 sdfBridge2D(real3 color, real sdf, real stroke, real width) {
     color *= 1 - sdfStroke2D(sdf, stroke, width * 2);
     return color + sdfStroke2D(sdf, stroke, width);
+    
 }
 
 // Stoke Sample Graph
